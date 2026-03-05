@@ -15,7 +15,7 @@ body {
 header {
     position: fixed;
     width: 100%;
-    padding: 20px 8%;
+    padding: 18px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,23 +47,24 @@ nav a {
     color: white;
 }
 
-/* HERO CORRIGIDA */
+/* HERO */
 .hero {
     height: 100vh;
-    background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70") center/cover no-repeat;
+    background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70") center center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     color: white;
+    padding-top: 100px; /* espaço por causa do header fixo */
 }
 
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35); /* overlay equilibrado */
+    background: rgba(0,0,0,0.35);
 }
 
 .hero-content {
@@ -76,6 +77,7 @@ nav a {
 .hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
+    line-height: 1.1;
 }
 
 .hero p {
@@ -85,7 +87,7 @@ nav a {
 
 .btn {
     display: inline-block;
-    background: #00aaff;
+    background: #007BFF;
     color: white;
     padding: 14px 30px;
     border-radius: 30px;
@@ -95,7 +97,7 @@ nav a {
 }
 
 .btn:hover {
-    background: #0088cc;
+    background: #0056b3;
 }
 
 /* SEÇÕES */
@@ -182,32 +184,23 @@ footer {
     padding: 20px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
+/* ===================== */
+/* RESPONSIVO MOBILE     */
+/* ===================== */
+
+@media screen and (max-width: 768px) {
 
     header {
         flex-direction: column;
-    }
-
-    nav {
-        margin-top: 10px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-
-        @media (max-width: 768px) {
-
-    header {
         padding: 15px 5%;
     }
 
     .logo {
         font-size: 20px;
+    }
+
+    nav {
+        margin-top: 8px;
     }
 
     nav a {
@@ -221,36 +214,30 @@ footer {
 
     .hero {
         height: 90vh;
-        padding-top: 80px;
+        padding-top: 120px;
     }
 
     .hero h1 {
-        font-size: 28px;
-        line-height: 1.2;
+        font-size: 26px;
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .btn {
         padding: 12px 22px;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .hero::before {
-        background: rgba(0, 0, 0, 0.25); /* menos escuro no mobile */
-    }
-}
+        background: rgba(0,0,0,0.25);
     }
 
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
+    .cards,
     .pricing {
         flex-direction: column;
         align-items: center;
     }
+
 }
